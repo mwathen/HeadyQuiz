@@ -49,13 +49,21 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question(imgName: "img1", questionText: "What is 2 x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        questionsArray = [que1, que2, que3, que4, que5, que6]
+        let que1 = Question(imgName: "img1", questionText: "Which former member of Pink Floyd made an impromptu visit to the studio during the recording of 'Wish you were Here'?", options: ["Nick Mason","Syd Barrett","Roger Waters","David Gilmour"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que2 = Question(imgName: "img2", questionText: "What was the name of the band Janis Joplin started out with?", options: ["Jefferson Airplane", "Canned Heat", "Big Brother and the Holding Company", "The Mamas and the Papas"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let que3 = Question(imgName: "img1", questionText: "What famous jazz musician made a huge 80's comeback with 'Rockit'?", options: ["Herbie Hancock", "Miles Davis", "Wayne Shorter", "John Scofield"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que4 = Question(imgName: "img2", questionText: "What city were the Dead 'busted' in that is infamously referenced in Truckin?", options: ["Atlanta", "New Orleans", "Los Angeles", "Buffalo"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let que5 = Question(imgName: "img1", questionText: "What is the name of the Virginia venue where The Dead and Phish have both played epic shows, and is fondly referred to as the Spaceship?", options: ["John Paul Jones Arena", "NTelos Pavilion", "Hampton Coliseum", "EagleBank Arena"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let que6 = Question(imgName: "img2", questionText: "What was the name of the 2003 comeback album by the Allman Brothers Band?", options: ["Hittin' the Note", "Space Wrangler", "Eat a Peach", "Here and Back Again"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que7 = Question(imgName: "img2", questionText: "Which classic rock musician testified before the Parents Music Resource Center in 1985?", options: ["Don Henley", "Frank Zappa", "Bob Weir", "Joe Perry"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que8 = Question(imgName: "img2", questionText: "What was the name of the 1996 free-jazz ensemble that included Trey, John Medeski, and a host of other musicians?", options: ["The Everyone Orchestra", "Surrender to the Air", "70 Volt Parade", "SerialPod"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que9 = Question(imgName: "img2", questionText: "What was the name of Mike Gordon's honky-tonk band that he toured with in 2006?", options: ["The Rhythm Devils", "SerialPod", "Ramble Dove", "The Hackensaw Boys"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que10 = Question(imgName: "img2", questionText: "What was the name of the train tour that traveled Canada with Janis, The Dead and The Band in 1970?", options: ["Steel Wheels Tour", "Trippin across Canada", "Ridin' That Train", "Festival Express"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let que11 = Question(imgName: "img2", questionText: "What was the name of the Phish run in 2017 that consisted of 13 shows straight at Madison Square Garden?", options: ["Magnaball", "Island Tour", "Bakers Dozen", "Garden Party"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let que12 = Question(imgName: "img2", questionText: "What was the Blues Traveler song from their 1994 album ‘Four’ that was a huge hit for them?", options: ["But Anyway", "Run-Around", "Most Precarious", "The Mountains win Again"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        
+        questionsArray = [que1, que2, que3, que4, que5, que6, que7, que8, que9, que10, que11, que12]
+        questionsArray.shuffle()
         
         setupViews()
     }
@@ -100,11 +108,13 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
             currentQuestionNumber += currentQuestionNumber >= questionsArray.count ? 0 : 1
         } else {
-            contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - collectionBounds.size.width))
-            currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
+            //btnPrevious
+            // contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - //collectionBounds.size.width))
+            //currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
         }
         self.moveToFrame(contentOffset: contentOffset)
         lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"
+        btnNext.isHidden = true
     }
     
     func moveToFrame(contentOffset : CGFloat) {
@@ -118,15 +128,17 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        self.view.addSubview(btnPrev)
+        /* self.view.addSubview(btnPrev)
         btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
         btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true */
         
         self.view.addSubview(btnNext)
-        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
-        btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
+        //btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
+        //btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
+        btnNext.heightAnchor.constraint(equalToConstant: 40).isActive=true
+        btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive=true
         btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
         
@@ -143,9 +155,11 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
         lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
         lblScore.text = "Score: \(score) / \(questionsArray.count)"
+        
+        btnNext.isHidden=true
     }
     
-    let btnPrev: UIButton = {
+    /* let btnPrev: UIButton = {
         let btn=UIButton()
         btn.setTitle("< Previous", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
@@ -153,7 +167,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btn.translatesAutoresizingMaskIntoConstraints=false
         btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
         return btn
-    }()
+    }() */
     
     let btnNext: UIButton = {
         let btn=UIButton()
@@ -193,12 +207,13 @@ extension QuizVC: QuizCVCellDelegate {
         questionsArray[index.item].isAnswered=true
         if questionsArray[index.item].correctAns != btnIndex {
             questionsArray[index.item].wrongAns = btnIndex
-            score -= 1
+            score -= 0
         } else {
             score += 1
         }
         lblScore.text = "Score: \(score) / \(questionsArray.count)"
         myCollectionView.reloadItems(at: [index])
+        btnNext.isHidden = false
     }
     
     func getCenterIndex() -> IndexPath? {

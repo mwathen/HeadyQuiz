@@ -32,6 +32,15 @@ class QuizCVCell: UICollectionViewCell {
             btn3.setTitle(unwrappedQue.options[2], for: .normal)
             btn4.setTitle(unwrappedQue.options[3], for: .normal)
             
+            btn1.titleLabel?.font = btn1.titleLabel?.font.withSize(14)
+            btn2.titleLabel?.font = btn2.titleLabel?.font.withSize(14)
+            btn3.titleLabel?.font = btn3.titleLabel?.font.withSize(14)
+            btn4.titleLabel?.font = btn4.titleLabel?.font.withSize(14)
+            btn1.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            btn2.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            btn3.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            btn4.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+
             if unwrappedQue.isAnswered {
                 btnsArray[unwrappedQue.correctAns].backgroundColor=UIColor.green
                 if unwrappedQue.wrongAns >= 0 {

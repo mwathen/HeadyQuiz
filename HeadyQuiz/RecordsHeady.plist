@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Records</key>
+	<dict>
+		<key>Record 1</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Nick Mason</string>
+			<key>Answer 2</key>
+			<string>Syd Barrett</string>
+			<key>Answer 3</key>
+			<string>Roger Waters</string>
+			<key>Answer 4</key>
+			<string>David Gilmour</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which former member of Pink Floyd made an impromptu visit to the studio during the recording of &apos;Wish you were Here&apos;?</string>
+		</dict>
+		<key>Record 2</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Jefferson Airplane</string>
+			<key>Answer 2</key>
+			<string>Canned Heat</string>
+			<key>Answer 3</key>
+			<string>Big Brother and the Holding Company</string>
+			<key>Answer 4</key>
+			<string>The Mamas and the Papas</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What was the name of the band Janis Joplin started out with?</string>
+		</dict>
+		<key>Record 3</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Herbie Hancock</string>
+			<key>Answer 2</key>
+			<string>Miles Davis</string>
+			<key>Answer 3</key>
+			<string>Wayne Shorter</string>
+			<key>Answer 4</key>
+			<string>John Scofield</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What famous jazz musician made a huge 80&apos;s comeback with &apos;Rockit&apos;?</string>
+		</dict>
+		<key>Record 4</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Atlanta</string>
+			<key>Answer 2</key>
+			<string>New Orleans</string>
+			<key>Answer 3</key>
+			<string>Los Angeles</string>
+			<key>Answer 4</key>
+			<string>Buffalo</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Question</key>
+			<string>What city were the Dead &apos;busted&apos; in that is infamously referenced in Truckin?</string>
+		</dict>
+		<key>Record 5</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Hittin&apos; the Note</string>
+			<key>Answer 2</key>
+			<string>Space Wrangler</string>
+			<key>Answer 3</key>
+			<string>Eat a Peach</string>
+			<key>Answer 4</key>
+			<string>Here and Back Again</string>
+			<key>Correct Answer</key>
+			<integer>1</integer>
+			<key>Question</key>
+			<string>What was the name of the 2003 comeback album by the Allman Brothers?</string>
+		</dict>
+		<key>Record 6</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>John Paul Jones Arena</string>
+			<key>Answer 2</key>
+			<string>NTelos Pavilion</string>
+			<key>Answer 3</key>
+			<string>Hampton Coliseum</string>
+			<key>Answer 4</key>
+			<string>EagleBank Arena</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What is the name of the Virginia venue where The Dead and Phish have both played epic shows, and is fondly referred to as the Spaceship?
+            </string>
+		</dict>
+		<key>Record 7</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Don Henley</string>
+			<key>Answer 2</key>
+			<string>Frank Zappa</string>
+			<key>Answer 3</key>
+			<string>Bob Weir</string>
+			<key>Answer 4</key>
+			<string>Joe Perry</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>Which classic rock musician testified before the Parents Music Resource Center in 1985?
+            </string>
+		</dict>
+		<key>Record 8</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>The Everyone Orchestra</string>
+			<key>Answer 2</key>
+			<string>Surrender to the Air</string>
+			<key>Answer 3</key>
+			<string>70 Volt Parade</string>
+			<key>Answer 4</key>
+			<string>SerialPod</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What was the name of the 1996 free-jazz ensemble that included Trey, John Medeski, and a host of other musicians?
+            </string>
+		</dict>
+		<key>Record 9</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>The Rhythm Devils</string>
+			<key>Answer 2</key>
+			<string>SerialPod</string>
+			<key>Answer 3</key>
+			<string>Ramble Dove</string>
+			<key>Answer 4</key>
+			<string>The Hackensaw Boys</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What was the name of Mike Gordon&apos;s honky-tonk band that he toured with in 2006?
+            </string>
+		</dict>
+		<key>Record 10</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Steel Wheels Tour</string>
+			<key>Answer 2</key>
+			<string>Trippin across Canada</string>
+			<key>Answer 3</key>
+			<string>Ridin&apos; That Train</string>
+			<key>Answer 4</key>
+			<string>Festival Express</string>
+			<key>Correct Answer</key>
+			<integer>4</integer>
+			<key>Question</key>
+			<string>What was the name of the train tour that traveled Canada with Janis, The Dead and The Band in 1970?
+            </string>
+		</dict>
+		<key>Record 11</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>Magnaball</string>
+			<key>Answer 2</key>
+			<string>Island Tour</string>
+			<key>Answer 3</key>
+			<string>Bakers Dozen</string>
+			<key>Answer 4</key>
+			<string>Garden Party</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>What was the name of the Phish run in 2017 that consisted of 13 shows straight at Madison Square Garden?
+            </string>
+		</dict>
+		<key>Record 12</key>
+		<dict>
+			<key>Answer 1</key>
+			<string>But Anyway</string>
+			<key>Answer 2</key>
+			<string>Run-Around</string>
+			<key>Answer 3</key>
+			<string>Most Precarious</string>
+			<key>Answer 4</key>
+			<string>The Mountains win Again</string>
+			<key>Correct Answer</key>
+			<integer>2</integer>
+			<key>Question</key>
+			<string>What was the Blues Traveler song from their 1994 album ‘Four’ that was a huge hit for them?
+            </string>
+		</dict>
+	</dict>
+</dict>
+</plist>

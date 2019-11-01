@@ -26,19 +26,19 @@ class ResultVC: UIViewController {
         guard let sc = score, let tc = totalScore else { return }
         let s = sc * 100 / tc
         if s < 10 {
-            rating = "Poor"
+            rating = "Poor - F"
             color = UIColor.darkGray
         }  else if s < 40 {
-            rating = "Average"
+            rating = "Average - C"
             color = UIColor.blue
         } else if s < 60 {
-            rating = "Good"
+            rating = "Good - B-"
             color = UIColor.yellow
         } else if s < 80 {
-            rating = "Excellent"
+            rating = "Excellent - A"
             color = UIColor.red
         } else if s <= 100 {
-            rating = "Outstanding"
+            rating = "Outstanding - A+"
             color = UIColor.orange
         }
         lblRating.text = "\(rating)"

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Quiz"
+        self.title="Heady Quiz"
         self.view.backgroundColor=UIColor.white
         
         setupViews()
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
-        lbl.text="Quiz App"
+        lbl.text="Heady Quiz"
         lbl.textColor=UIColor.darkGray
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 46)
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         let btn=UIButton()
         btn.setTitle("Get Started", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
+        btn.backgroundColor=UIColor.red
         btn.layer.cornerRadius=5
         btn.layer.masksToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false

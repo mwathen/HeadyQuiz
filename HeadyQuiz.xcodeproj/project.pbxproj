@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500655EE2363955100C4A00C /* RecordsHeady.plist in Resources */ = {isa = PBXBuildFile; fileRef = 500655ED2363955000C4A00C /* RecordsHeady.plist */; };
 		D953D90F1FAD9C7600288DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D90E1FAD9C7600288DDF /* AppDelegate.swift */; };
 		D953D9111FAD9C7600288DDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D9101FAD9C7600288DDF /* ViewController.swift */; };
 		D953D9161FAD9C7600288DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D953D9151FAD9C7600288DDF /* Assets.xcassets */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D953D90B1FAD9C7600288DDF /* Quiz2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		500655ED2363955000C4A00C /* RecordsHeady.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecordsHeady.plist; sourceTree = "<group>"; };
+		D953D90B1FAD9C7600288DDF /* HeadyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D953D90E1FAD9C7600288DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D953D9101FAD9C7600288DDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D953D9151FAD9C7600288DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		D953D9021FAD9C7600288DDF = {
 			isa = PBXGroup;
 			children = (
-				D953D90D1FAD9C7600288DDF /* Quiz2 */,
+				D953D90D1FAD9C7600288DDF /* HeadyQuiz */,
 				D953D90C1FAD9C7600288DDF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,14 +52,15 @@
 		D953D90C1FAD9C7600288DDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D953D90B1FAD9C7600288DDF /* Quiz2.app */,
+				D953D90B1FAD9C7600288DDF /* HeadyQuiz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D953D90D1FAD9C7600288DDF /* Quiz2 */ = {
+		D953D90D1FAD9C7600288DDF /* HeadyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				500655ED2363955000C4A00C /* RecordsHeady.plist */,
 				D953D90E1FAD9C7600288DDF /* AppDelegate.swift */,
 				D953D9101FAD9C7600288DDF /* ViewController.swift */,
 				D953D9201FAD9D2800288DDF /* QuizVC.swift */,
@@ -67,15 +70,15 @@
 				D953D9171FAD9C7600288DDF /* LaunchScreen.storyboard */,
 				D953D91A1FAD9C7600288DDF /* Info.plist */,
 			);
-			path = Quiz2;
+			path = HeadyQuiz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D953D90A1FAD9C7600288DDF /* Quiz2 */ = {
+		D953D90A1FAD9C7600288DDF /* HeadyQuiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D953D91D1FAD9C7600288DDF /* Build configuration list for PBXNativeTarget "Quiz2" */;
+			buildConfigurationList = D953D91D1FAD9C7600288DDF /* Build configuration list for PBXNativeTarget "HeadyQuiz" */;
 			buildPhases = (
 				D953D9071FAD9C7600288DDF /* Sources */,
 				D953D9081FAD9C7600288DDF /* Frameworks */,
@@ -85,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = Quiz2;
-			productName = Quiz2;
-			productReference = D953D90B1FAD9C7600288DDF /* Quiz2.app */;
+			name = HeadyQuiz;
+			productName = HeadyQuiz;
+			productReference = D953D90B1FAD9C7600288DDF /* HeadyQuiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +109,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D953D9061FAD9C7600288DDF /* Build configuration list for PBXProject "Quiz2" */;
+			buildConfigurationList = D953D9061FAD9C7600288DDF /* Build configuration list for PBXProject "HeadyQuiz" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D953D90A1FAD9C7600288DDF /* Quiz2 */,
+				D953D90A1FAD9C7600288DDF /* HeadyQuiz */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D953D9191FAD9C7600288DDF /* LaunchScreen.storyboard in Resources */,
+				500655EE2363955100C4A00C /* RecordsHeady.plist in Resources */,
 				D953D9161FAD9C7600288DDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,10 +279,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Quiz2/Info.plist;
+				DEVELOPMENT_TEAM = 6P97WW4QGA;
+				INFOPLIST_FILE = HeadyQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akhil.Quiz2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikewath.HeadyQuiz;
+				PRODUCT_NAME = HeadyQuiz;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,10 +294,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Quiz2/Info.plist;
+				DEVELOPMENT_TEAM = 6P97WW4QGA;
+				INFOPLIST_FILE = HeadyQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.akhil.Quiz2;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikewath.HeadyQuiz;
+				PRODUCT_NAME = HeadyQuiz;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D953D9061FAD9C7600288DDF /* Build configuration list for PBXProject "Quiz2" */ = {
+		D953D9061FAD9C7600288DDF /* Build configuration list for PBXProject "HeadyQuiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D953D91B1FAD9C7600288DDF /* Debug */,
@@ -310,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D953D91D1FAD9C7600288DDF /* Build configuration list for PBXNativeTarget "Quiz2" */ = {
+		D953D91D1FAD9C7600288DDF /* Build configuration list for PBXNativeTarget "HeadyQuiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D953D91E1FAD9C7600288DDF /* Debug */,
