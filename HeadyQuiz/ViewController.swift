@@ -26,6 +26,12 @@ class ViewController: UIViewController {
     }
     
     func setupViews() {
+        
+        /* for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        } */
+        
         self.view.addSubview(lblTitle)
         lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive=true
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
@@ -40,11 +46,21 @@ class ViewController: UIViewController {
     }
     
     let lblTitle: UILabel = {
+        
+        guard let customFont = UIFont(name: "BellBottom.Laser", size:46) else {
+            fatalError("""
+                Failed to load the "Bellbottom" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        
         let lbl=UILabel()
         lbl.text="Heady Quiz"
         lbl.textColor=UIColor.darkGray
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 46)
+        lbl.font = UIFontMetrics.default.scaledFont(for: customFont)
+        //lbl.font = UIFont.systemFont(ofSize: 46)
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
