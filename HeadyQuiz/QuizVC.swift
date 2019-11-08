@@ -49,16 +49,16 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question(imgName: "img1", questionText: "Which former member of Pink Floyd made an impromptu visit to the studio during the recording of 'Wish you were Here'?", options: ["Nick Mason","Syd Barrett","Roger Waters","David Gilmour"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question(imgName: "img2", questionText: "What was the name of the band Janis Joplin started out with?", options: ["Jefferson Airplane", "Canned Heat", "Big Brother and the Holding Company", "The Mamas and the Papas"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que3 = Question(imgName: "img1", questionText: "What famous jazz musician made a huge 80's comeback with 'Rockit'?", options: ["Herbie Hancock", "Miles Davis", "Wayne Shorter", "John Scofield"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que1 = Question(imgName: "pinkfloyd", questionText: "Which former member of Pink Floyd made an impromptu visit to the studio during the recording of 'Wish you were Here'?", options: ["Nick Mason","Syd Barrett","Roger Waters","David Gilmour"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que2 = Question(imgName: "janis", questionText: "What was the name of the band Janis Joplin started out with?", options: ["Jefferson Airplane", "Canned Heat", "Big Brother and the Holding Company", "The Mamas and the Papas"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let que3 = Question(imgName: "jazz", questionText: "What famous jazz musician made a huge 80's comeback with 'Rockit'?", options: ["Herbie Hancock", "Miles Davis", "Wayne Shorter", "John Scofield"], correctAns: 0, wrongAns: -1, isAnswered: false)
         let que4 = Question(imgName: "gdead", questionText: "What city were the Dead 'busted' in that is infamously referenced in Truckin?", options: ["Atlanta", "New Orleans", "Los Angeles", "Buffalo"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que5 = Question(imgName: "img1", questionText: "What is the name of the Virginia venue where The Dead and Phish have both played epic shows, and is fondly referred to as the Spaceship?", options: ["John Paul Jones Arena", "NTelos Pavilion", "Hampton Coliseum", "EagleBank Arena"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que6 = Question(imgName: "img2", questionText: "What was the name of the 2003 comeback album by the Allman Brothers Band?", options: ["Hittin' the Note", "Space Wrangler", "Eat a Peach", "Here and Back Again"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que7 = Question(imgName: "img2", questionText: "Which classic rock musician testified before the Parents Music Resource Center in 1985?", options: ["Don Henley", "Frank Zappa", "Bob Weir", "Joe Perry"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que8 = Question(imgName: "img2", questionText: "What was the name of the 1996 free-jazz ensemble that included Trey, John Medeski, and a host of other musicians?", options: ["The Everyone Orchestra", "Surrender to the Air", "70 Volt Parade", "SerialPod"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que9 = Question(imgName: "img2", questionText: "What was the name of Mike Gordon's honky-tonk band that he toured with in 2006?", options: ["The Rhythm Devils", "SerialPod", "Ramble Dove", "The Hackensaw Boys"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que10 = Question(imgName: "img2", questionText: "What was the name of the train tour that traveled Canada with Janis, The Dead and The Band in 1970?", options: ["Steel Wheels Tour", "Trippin across Canada", "Ridin' That Train", "Festival Express"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let que5 = Question(imgName: "phish", questionText: "What is the name of the Virginia venue where The Dead and Phish have both played epic shows, and is fondly referred to as the Spaceship?", options: ["John Paul Jones Arena", "NTelos Pavilion", "Hampton Coliseum", "EagleBank Arena"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let que6 = Question(imgName: "allmans", questionText: "What was the name of the 2003 comeback album by the Allman Brothers Band?", options: ["Hittin' the Note", "Space Wrangler", "Eat a Peach", "Here and Back Again"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que7 = Question(imgName: "tipper", questionText: "Which classic rock musician testified before the Parents Music Resource Center in 1985?", options: ["Don Henley", "Frank Zappa", "Bob Weir", "Joe Perry"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que8 = Question(imgName: "surrender", questionText: "What was the name of the 1996 free-jazz ensemble that included Trey, John Medeski, and a host of other musicians?", options: ["The Everyone Orchestra", "Surrender to the Air", "70 Volt Parade", "SerialPod"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let que9 = Question(imgName: "mgordon", questionText: "What was the name of Mike Gordon's honky-tonk band that he toured with in 2006?", options: ["The Rhythm Devils", "SerialPod", "Ramble Dove", "The Hackensaw Boys"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let que10 = Question(imgName: "train", questionText: "What was the name of the train tour that traveled Canada with Janis, The Dead and The Band in 1970?", options: ["Steel Wheels Tour", "Trippin across Canada", "Ridin' That Train", "Festival Express"], correctAns: 3, wrongAns: -1, isAnswered: false)
         let que11 = Question(imgName: "phish", questionText: "What was the name of the Phish run in 2017 that consisted of 13 shows straight at Madison Square Garden?", options: ["Magnaball", "Island Tour", "Bakers Dozen", "Garden Party"], correctAns: 2, wrongAns: -1, isAnswered: false)
         let que12 = Question(imgName: "bluestraveler", questionText: "What was the Blues Traveler song from their 1994 album ‘Four’ that was a huge hit for them?", options: ["But Anyway", "Run-Around", "Most Precarious", "The Mountains win Again"], correctAns: 1, wrongAns: -1, isAnswered: false)
         
@@ -66,6 +66,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         questionsArray.shuffle()
         
         setupViews()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     var window: UIWindow?
+    var player: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor=UIColor.white
         
         setupViews()
+        playSound()
     }
     
     @objc func btnGetStartedAction() {
@@ -43,6 +46,28 @@ class ViewController: UIViewController {
         btnGetStarted.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive=true
+    }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "caseyjones_short", withExtension: "mp3") else { return }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+            /* iOS 10 and earlier require the following line:
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+
+            guard let player = player else { return }
+
+            player.play()
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     let lblTitle: UILabel = {
