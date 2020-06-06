@@ -1,9 +1,6 @@
 //
 //  ViewController.swift
-//  Quiz2
-//
-//  Created by Muskan on 11/4/17.
-//  Copyright © 2017 akhil. All rights reserved.
+//  HeadyQuiz
 //
 
 import UIKit

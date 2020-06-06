@@ -1,9 +1,6 @@
 //
 //  ResultVC.swift
-//  Quiz2
-//
-//  Created by Muskan on 11/4/17.
-//  Copyright © 2017 akhil. All rights reserved.
+//  HeadyQuiz
 //
 
 import UIKit
@@ -104,7 +101,7 @@ class ResultVC: UIViewController {
         lbl.text="Good"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
-        lbl.font = UIFont.boldSystemFont(ofSize: 24)
+        lbl.font = UIFont.boldSystemFont(ofSize: 22)
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()

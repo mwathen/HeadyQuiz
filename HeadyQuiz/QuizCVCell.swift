@@ -1,9 +1,7 @@
 //
 //  QuizCVCell.swift
-//  Quiz2
+//  HeadyQuiz
 //
-//  Created by Muskan on 11/4/17.
-//  Copyright © 2017 akhil. All rights reserved.
 //
 
 import UIKit
