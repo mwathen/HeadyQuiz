@@ -63,7 +63,7 @@ class ResultVC: UIViewController {
         self.view.addSubview(lblRating)
         lblRating.topAnchor.constraint(equalTo: lblScore.bottomAnchor, constant: 40).isActive=true
         lblRating.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        lblRating.widthAnchor.constraint(equalToConstant: 150).isActive=true
+        lblRating.widthAnchor.constraint(equalToConstant: 200).isActive=true
         lblRating.heightAnchor.constraint(equalToConstant: 60).isActive=true
         showRating()
         
