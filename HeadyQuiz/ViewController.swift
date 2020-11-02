@@ -16,6 +16,9 @@ class ViewController: UIViewController {
         self.title="Heady Quiz"
         self.view.backgroundColor=UIColor.white
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "Restart", style: .plain, target: nil, action: nil)
+        
         setupViews()
         playSound()
     }
