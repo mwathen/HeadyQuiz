@@ -50,16 +50,23 @@ class ViewController: UIViewController {
         } */
         
         self.view.addSubview(lblTitle)
-        lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive=true
+        lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive=true
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         lblTitle.widthAnchor.constraint(equalToConstant: 250).isActive=true
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true
+        
+        self.view.addSubview(imgView)
+        imgView.heightAnchor.constraint(equalToConstant: 160).isActive=true
+        imgView.widthAnchor.constraint(equalToConstant: 284).isActive=true
+        imgView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        imgView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive=true
         
         self.view.addSubview(btnGetStarted)
         btnGetStarted.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnGetStarted.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive=true
+        btnGetStarted.bottomAnchor
+            .constraint(equalTo: self.view.bottomAnchor, constant: -180).isActive=true
         
         
         lblTitle.alpha = 0.0
@@ -111,6 +118,15 @@ class ViewController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints=false
 
         return lbl
+    }()
+    
+    let imgView: UIImageView = {
+        let v=UIImageView()
+        //let imagename = "7413.jpg"
+        v.image = UIImage(named: "7413.jpg")
+        v.contentMode = .scaleAspectFit
+        v.translatesAutoresizingMaskIntoConstraints=false
+        return v
     }()
     
     let btnGetStarted: UIButton = {
