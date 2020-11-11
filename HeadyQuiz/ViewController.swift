@@ -6,6 +6,19 @@
 import UIKit
 import AVFoundation
 
+
+extension UIView {
+
+        func fadeTransition(_ duration:CFTimeInterval) {
+            let animation = CATransition()
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            animation.type = CATransitionType.fade
+            animation.duration = duration
+            layer.add(animation, forKey: CATransitionType.fade.rawValue)
+        }
+    }
+
+
 class ViewController: UIViewController {
     
     var window: UIWindow?
@@ -19,7 +32,8 @@ class ViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "Restart", style: .plain, target: nil, action: nil)
         
-        setupViews()
+        setupViews(view:self.view)
+        
         playSound()
     }
     
@@ -28,7 +42,7 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(v, animated: true)
     }
     
-    func setupViews() {
+    func setupViews(view: UIView) {
         
         /* for family in UIFont.familyNames.sorted() {
             let names = UIFont.fontNames(forFamilyName: family)
@@ -46,6 +60,13 @@ class ViewController: UIViewController {
         btnGetStarted.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive=true
+        
+        
+        lblTitle.alpha = 0.0
+        UIView.animate(withDuration: 1.0) {
+            self.lblTitle.alpha = 1.0
+            view.layoutIfNeeded()
+        }
     }
     
     func playSound() {
@@ -71,7 +92,7 @@ class ViewController: UIViewController {
     }
     
     let lblTitle: UILabel = {
-        
+                
         guard let customFont = UIFont(name: "BellBottom.Laser", size:46) else {
             fatalError("""
                 Failed to load the "Bellbottom" font.
@@ -82,18 +103,19 @@ class ViewController: UIViewController {
         
         let lbl=UILabel()
         lbl.text="Heady Quiz"
-        lbl.textColor=UIColor.darkGray
+        lbl.textColor=UIColor(hue: 0.6833, saturation: 1, brightness: 0.59, alpha: 1.0)
         lbl.textAlignment = .center
         lbl.font = UIFontMetrics.default.scaledFont(for: customFont)
         //lbl.font = UIFont.systemFont(ofSize: 46)
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
+
         return lbl
     }()
     
     let btnGetStarted: UIButton = {
         let btn=UIButton()
-        btn.setTitle("Get Started", for: .normal)
+        btn.setTitle("Take the Quiz", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.backgroundColor=UIColor.red
         btn.layer.cornerRadius=5

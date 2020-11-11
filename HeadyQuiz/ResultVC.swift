@@ -14,7 +14,7 @@ class ResultVC: UIViewController {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         
-        setupViews()
+        setupViews(view:self.view)
     }
     
     func showRating() {
@@ -46,7 +46,7 @@ class ResultVC: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func setupViews() {
+    func setupViews(view: UIView) {
         self.view.addSubview(lblTitle)
         lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80).isActive=true
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
@@ -73,14 +73,29 @@ class ResultVC: UIViewController {
         btnRestart.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnRestart.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnRestart.addTarget(self, action: #selector(btnRestartAction), for: .touchUpInside)
+        
+        lblTitle.alpha = 0.0
+        UIView.animate(withDuration: 1.0) {
+            self.lblTitle.alpha = 1.0
+            view.layoutIfNeeded()
+        }
     }
     
     let lblTitle: UILabel = {
+        
+        guard let customFont = UIFont(name: "BellBottom.Laser", size:46) else {
+            fatalError("""
+                Failed to load the "Bellbottom" font.
+                Make sure the font file is included in the project and the font name is spelled correctly.
+                """
+            )
+        }
+        
         let lbl=UILabel()
         lbl.text="Your Score"
-        lbl.textColor=UIColor.darkGray
+        lbl.textColor=UIColor(hue: 0.6833, saturation: 1, brightness: 0.59, alpha: 1.0)
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 46)
+        lbl.font = UIFontMetrics.default.scaledFont(for: customFont)
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
