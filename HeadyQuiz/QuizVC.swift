@@ -47,6 +47,22 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
+        let url = Bundle.main.url(forResource: "RecordsHeady", withExtension: "plist")!
+        let recordsData = try! Data(contentsOf: url)
+        let myPlist = try! PropertyListSerialization.propertyList(from: recordsData, options: [], format: nil) as! [String:Any]
+        
+        //debugPrint(myPlist)
+        
+        //todo - well this took a while
+        for (_,value) in myPlist {
+            for(_, value) in value as! [String:AnyObject] {
+                let values = value as! [String:AnyObject]
+                debugPrint(type(of: values))
+                let answer1  = values["Answer 1"]
+                print(answer1 as! String)
+            }
+        }
+        
         let que1 = Question(imgName: "pinkfloyd", questionText: "Which former member of Pink Floyd made an impromptu visit to the studio during the recording of 'Wish you were Here'?", options: ["Nick Mason","Syd Barrett","Roger Waters","David Gilmour"], correctAns: 1, wrongAns: -1, isAnswered: false)
         let que2 = Question(imgName: "janis", questionText: "What was the name of the band Janis Joplin started out with?", options: ["Jefferson Airplane", "Canned Heat", "Big Brother and the Holding Company", "The Mamas and the Papas"], correctAns: 2, wrongAns: -1, isAnswered: false)
         let que3 = Question(imgName: "jazz", questionText: "What famous jazz musician made a huge 80's comeback with 'Rockit'?", options: ["Herbie Hancock", "Miles Davis", "Wayne Shorter", "John Scofield"], correctAns: 0, wrongAns: -1, isAnswered: false)
