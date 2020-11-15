@@ -215,6 +215,23 @@
 			<string>What was the Blues Traveler song from their 1994 album ‘Four’ that was a huge hit for them?
             </string>
 		</dict>
+		<key>Record 13</key>
+		<dict>
+			<key>Image Name</key>
+			<string>moe</string>
+			<key>Answer 1</key>
+			<string>God Street Wine</string>
+			<key>Answer 2</key>
+			<string>Agents of Good Roots</string>
+			<key>Answer 3</key>
+			<string>Leftover Salmon</string>
+			<key>Answer 4</key>
+			<string>moe.</string>
+			<key>Correct Answer</key>
+			<integer>3</integer>
+			<key>Question</key>
+			<string>Which upstate NY guitar jamband got their start in the early 90's and played an epic set at Bonnaroo 2002?</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

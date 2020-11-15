@@ -18,6 +18,7 @@ struct Question {
 class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var myCollectionView: UICollectionView!
+    var questionsArrayAll = [Question]()
     var questionsArray = [Question]()
     var score: Int = 0
     var currentQuestionNumber = 1
@@ -72,12 +73,14 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 let wrongAns = -1
                 let isAnswered:Bool = false
                 let que = Question(imgName: imgName, questionText:questionText,options:options,correctAns:correctAns,wrongAns:wrongAns,isAnswered:isAnswered)
-                questionsArray.append(que)
-                print(answer1)
+                questionsArrayAll.append(que)
             }
         }
         
-        questionsArray.shuffle()
+        questionsArrayAll.shuffle()
+
+        let questionsArrayAllSlice = questionsArrayAll[..<10]
+        questionsArray = Array(questionsArrayAllSlice)
         
         setupViews()
         
