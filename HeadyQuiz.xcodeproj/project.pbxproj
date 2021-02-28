@@ -10,7 +10,9 @@
 		500655EE2363955100C4A00C /* RecordsHeady.plist in Resources */ = {isa = PBXBuildFile; fileRef = 500655ED2363955000C4A00C /* RecordsHeady.plist */; };
 		503205BD23711AE5001B2A5A /* Belbott0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 503205BC23711AE4001B2A5A /* Belbott0.ttf */; };
 		503205BF23726381001B2A5A /* caseyjones_short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 503205BE23726381001B2A5A /* caseyjones_short.mp3 */; };
-		50AB481F255C959C006D1D5B /* 7413.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50AB481E255C959B006D1D5B /* 7413.jpg */; };
+		5096C62C25EC4F48001D7761 /* phish2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62B25EC4F48001D7761 /* phish2.jpg */; };
+		5096C62F25EC522F001D7761 /* widespread_panic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62E25EC522F001D7761 /* widespread_panic.jpg */; };
+		50AB481F255C959C006D1D5B /* grateful_dead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50AB481E255C959B006D1D5B /* grateful_dead.jpg */; };
 		D953D90F1FAD9C7600288DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D90E1FAD9C7600288DDF /* AppDelegate.swift */; };
 		D953D9111FAD9C7600288DDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D9101FAD9C7600288DDF /* ViewController.swift */; };
 		D953D9161FAD9C7600288DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D953D9151FAD9C7600288DDF /* Assets.xcassets */; };
@@ -24,7 +26,9 @@
 		500655ED2363955000C4A00C /* RecordsHeady.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecordsHeady.plist; sourceTree = "<group>"; };
 		503205BC23711AE4001B2A5A /* Belbott0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belbott0.ttf; sourceTree = "<group>"; };
 		503205BE23726381001B2A5A /* caseyjones_short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = caseyjones_short.mp3; sourceTree = "<group>"; };
-		50AB481E255C959B006D1D5B /* 7413.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7413.jpg; path = HeadyQuiz/7413.jpg; sourceTree = SOURCE_ROOT; };
+		5096C62B25EC4F48001D7761 /* phish2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = phish2.jpg; path = images/phish2.jpg; sourceTree = "<group>"; };
+		5096C62E25EC522F001D7761 /* widespread_panic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = widespread_panic.jpg; path = images/widespread_panic.jpg; sourceTree = "<group>"; };
+		50AB481E255C959B006D1D5B /* grateful_dead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grateful_dead.jpg; path = HeadyQuiz/images/grateful_dead.jpg; sourceTree = SOURCE_ROOT; };
 		D953D90B1FAD9C7600288DDF /* HeadyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D953D90E1FAD9C7600288DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D953D9101FAD9C7600288DDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 				500655ED2363955000C4A00C /* RecordsHeady.plist */,
 				D953D90E1FAD9C7600288DDF /* AppDelegate.swift */,
 				D953D9101FAD9C7600288DDF /* ViewController.swift */,
-				50AB481E255C959B006D1D5B /* 7413.jpg */,
+				5096C62E25EC522F001D7761 /* widespread_panic.jpg */,
+				50AB481E255C959B006D1D5B /* grateful_dead.jpg */,
+				5096C62B25EC4F48001D7761 /* phish2.jpg */,
 				D953D9201FAD9D2800288DDF /* QuizVC.swift */,
 				D953D9221FAD9FC900288DDF /* QuizCVCell.swift */,
 				D953D9241FADA20900288DDF /* ResultVC.swift */,
@@ -110,7 +116,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 1210;
-				ORGANIZATIONNAME = akhil;
+				ORGANIZATIONNAME = mwathen;
 				TargetAttributes = {
 					D953D90A1FAD9C7600288DDF = {
 						CreatedOnToolsVersion = 9.0;
@@ -143,9 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				503205BD23711AE5001B2A5A /* Belbott0.ttf in Resources */,
+				5096C62C25EC4F48001D7761 /* phish2.jpg in Resources */,
 				D953D9191FAD9C7600288DDF /* LaunchScreen.storyboard in Resources */,
-				50AB481F255C959C006D1D5B /* 7413.jpg in Resources */,
+				50AB481F255C959C006D1D5B /* grateful_dead.jpg in Resources */,
 				503205BF23726381001B2A5A /* caseyjones_short.mp3 in Resources */,
+				5096C62F25EC522F001D7761 /* widespread_panic.jpg in Resources */,
 				500655EE2363955100C4A00C /* RecordsHeady.plist in Resources */,
 				D953D9161FAD9C7600288DDF /* Assets.xcassets in Resources */,
 			);
@@ -231,7 +239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -285,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

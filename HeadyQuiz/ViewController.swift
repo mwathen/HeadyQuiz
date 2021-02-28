@@ -5,6 +5,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftUI
 
 
 extension UIView {
@@ -33,6 +34,10 @@ class ViewController: UIViewController {
             title: "Restart", style: .plain, target: nil, action: nil)
         
         setupViews(view:self.view)
+        
+        let xPosition = imgView.frame.minX
+
+        moveIt(imgView,2,0,xPosition)
         
         playSound()
     }
@@ -73,6 +78,34 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1.0) {
             self.lblTitle.alpha = 1.0
             view.layoutIfNeeded()
+        }
+
+    }
+    
+    //for startup, iterate through 3 different jam images
+    func moveIt(_ imageView: UIImageView,_ speed:CGFloat,_ iteration:Int, _ xPosition:CGFloat) {
+        let speeds = speed
+        var iterationx = iteration
+        let imageSpeed = speeds / view.frame.size.width
+        let averageSpeed = (40 - imageView.frame.origin.x) * imageSpeed
+        if (iterationx < 3) {
+            if (iterationx == 2) {
+                imageView.image = UIImage(named: "widespread_panic.jpg")
+            }
+            UIView.animate(withDuration: TimeInterval(averageSpeed), delay: 0.0, options: .curveLinear, animations: {
+            imageView.frame.origin.x = self.view.frame.size.width
+            }, completion: { (_) in
+            imageView.frame.origin.x = -imageView.frame.size.width
+                iterationx += 1
+                self.moveIt(imageView,speeds,iterationx,xPosition)
+            })
+        } else if (iterationx == 3) {
+            imageView.image = UIImage(named: "phish2.jpg")
+            UIView.animate(withDuration: TimeInterval(1), delay: 0.0, options: .curveLinear, animations: {
+                imageView.frame.origin.x = xPosition
+            })
+        } else {
+            //do nothing
         }
     }
     
@@ -123,7 +156,7 @@ class ViewController: UIViewController {
     let imgView: UIImageView = {
         let v=UIImageView()
         //let imagename = "7413.jpg"
-        v.image = UIImage(named: "7413.jpg")
+        v.image = UIImage(named: "grateful_dead.jpg")
         v.contentMode = .scaleAspectFit
         v.translatesAutoresizingMaskIntoConstraints=false
         return v
