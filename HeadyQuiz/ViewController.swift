@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         let xPosition = imgView.frame.minX
 
-        moveIt(imgView,2,0,xPosition)
+        moveIt(imgView,1.5,0,xPosition)
         
         playSound()
     }
@@ -110,7 +110,13 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "caseyjones_short", withExtension: "mp3") else { return }
+        
+        guard let gd_url = Bundle.main.url(forResource: "caseyjones_short", withExtension: "mp3") else { return }
+        
+        guard let phish_url = Bundle.main.url(forResource: "stash", withExtension: "mp3") else { return }
+        
+        let urls_all = [gd_url, phish_url]
+        let url = urls_all.randomElement()!
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -118,9 +124,6 @@ class ViewController: UIViewController {
 
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-
-            /* iOS 10 and earlier require the following line:
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
 
             guard let player = player else { return }
 
