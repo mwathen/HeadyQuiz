@@ -57,18 +57,6 @@ class ViewController: UIViewController {
                 lblLastScore.text = "Last Score: "+String(result[scores])
             }
             
-            let result = results.filter(uuid == uuid_string)
-            
-            do {
-                if try db.run(result.delete()) > 0 {
-                    print("deleted result")
-                } else {
-                    print("result not found")
-                }
-            } catch {
-                print("delete failed: \(error)")
-            }
-            
         } catch {
           print("Could not make connection")
           print("Unexpected error: \(error).")

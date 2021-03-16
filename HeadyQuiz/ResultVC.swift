@@ -62,6 +62,18 @@ class ResultVC: UIViewController {
                 t.column(scores)
             })
             
+            let result = results.filter(uuid == uuid_string)
+            
+            do {
+                if try db.run(result.delete()) > 0 {
+                    print("deleted result")
+                } else {
+                    print("result not found")
+                }
+            } catch {
+                print("delete failed: \(error)")
+            }
+            
             let insert = results.insert(uuid <- uuid_string, scores <- score_s)
             let _ = try db.run(insert)
                         
