@@ -80,7 +80,7 @@ class QuizCVCell: UICollectionViewCell {
         lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-        lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
+        lblQue.heightAnchor.constraint(equalToConstant: 120).isActive=true
         
         let btnWidth: CGFloat = 150
         let btnHeight: CGFloat = 50

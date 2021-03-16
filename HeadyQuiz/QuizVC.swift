@@ -32,7 +32,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        layout.itemSize = CGSize(width: self.view.frame.width, height: 600)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
@@ -170,17 +170,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         btnNext.isHidden=true
     }
-    
-    /* let btnPrev: UIButton = {
-        let btn=UIButton()
-        btn.setTitle("< Previous", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
-        return btn
-    }() */
-    
+
     let btnNext: UIButton = {
         let btn=UIButton()
         btn.setTitle("Next >", for: .normal)
@@ -221,12 +211,6 @@ extension QuizVC: QuizCVCellDelegate {
             questionsArray[index.item].wrongAns = btnIndex
             score -= 0
             AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
-            /* let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
-
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-
-            self.present(alert, animated: true) */
         } else {
             score += 1
         }
@@ -238,7 +222,7 @@ extension QuizVC: QuizCVCellDelegate {
     func getCenterIndex() -> IndexPath? {
         let center = self.view.convert(self.myCollectionView.center, to: self.myCollectionView)
         let index = myCollectionView!.indexPathForItem(at: center)
-        print(index ?? "index not found")
+        //print(index ?? "index not found")
         return index
     }
 }

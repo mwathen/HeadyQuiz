@@ -45,9 +45,8 @@ class ViewController: UIViewController {
             let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
             let db = try Connection(databaseFilePath)
             
-            let uuid_string = UIDevice.current.identifierForVendor!.uuidString
+            //let uuid_string = UIDevice.current.identifierForVendor!.uuidString
 
-            print(uuid_string)
             let results = Table("results")
             let uuid = Expression<String>("uuid")
             let scores = Expression<Int>("scores")
