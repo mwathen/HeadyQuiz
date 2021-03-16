@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		500655EE2363955100C4A00C /* RecordsHeady.plist in Resources */ = {isa = PBXBuildFile; fileRef = 500655ED2363955000C4A00C /* RecordsHeady.plist */; };
 		503205BD23711AE5001B2A5A /* Belbott0.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 503205BC23711AE4001B2A5A /* Belbott0.ttf */; };
 		503205BF23726381001B2A5A /* caseyjones_short.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 503205BE23726381001B2A5A /* caseyjones_short.mp3 */; };
+		507C5965260003DC00990B45 /* SQLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507C5964260003DC00990B45 /* SQLite.xcframework */; };
+		507C5966260003DC00990B45 /* SQLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 507C5964260003DC00990B45 /* SQLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		509563B325F087A00081A7BD /* stash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 509563B225F087A00081A7BD /* stash.mp3 */; };
 		5096C62C25EC4F48001D7761 /* phish2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62B25EC4F48001D7761 /* phish2.jpg */; };
 		5096C62F25EC522F001D7761 /* widespread_panic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62E25EC522F001D7761 /* widespread_panic.jpg */; };
@@ -23,10 +25,25 @@
 		D953D9251FADA20900288DDF /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D9241FADA20900288DDF /* ResultVC.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		507C5967260003DC00990B45 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				507C5966260003DC00990B45 /* SQLite.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		500655ED2363955000C4A00C /* RecordsHeady.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecordsHeady.plist; sourceTree = "<group>"; };
 		503205BC23711AE4001B2A5A /* Belbott0.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belbott0.ttf; sourceTree = "<group>"; };
 		503205BE23726381001B2A5A /* caseyjones_short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = caseyjones_short.mp3; sourceTree = "<group>"; };
+		507C5964260003DC00990B45 /* SQLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SQLite.xcframework; path = Carthage/Build/SQLite.xcframework; sourceTree = "<group>"; };
 		509563B225F087A00081A7BD /* stash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stash.mp3; sourceTree = "<group>"; };
 		5096C62B25EC4F48001D7761 /* phish2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phish2.jpg; sourceTree = "<group>"; };
 		5096C62E25EC522F001D7761 /* widespread_panic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = widespread_panic.jpg; sourceTree = "<group>"; };
@@ -47,12 +64,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507C5965260003DC00990B45 /* SQLite.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		507C5963260003DC00990B45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				507C5964260003DC00990B45 /* SQLite.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		509563B025F0872F0081A7BD /* images_all */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,11 +98,19 @@
 			path = audio_all;
 			sourceTree = "<group>";
 		};
+		50B9D6212601017D00C1E991 /* db */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		D953D9021FAD9C7600288DDF = {
 			isa = PBXGroup;
 			children = (
 				D953D90D1FAD9C7600288DDF /* HeadyQuiz */,
 				D953D90C1FAD9C7600288DDF /* Products */,
+				507C5963260003DC00990B45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +125,7 @@
 		D953D90D1FAD9C7600288DDF /* HeadyQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				50B9D6212601017D00C1E991 /* db */,
 				509563B125F087780081A7BD /* audio_all */,
 				509563B025F0872F0081A7BD /* images_all */,
 				500655ED2363955000C4A00C /* RecordsHeady.plist */,
@@ -117,6 +152,7 @@
 				D953D9071FAD9C7600288DDF /* Sources */,
 				D953D9081FAD9C7600288DDF /* Frameworks */,
 				D953D9091FAD9C7600288DDF /* Resources */,
+				507C5967260003DC00990B45 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,7 +352,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -328,7 +365,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6P97WW4QGA;
 				INFOPLIST_FILE = HeadyQuiz/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikewath.HeadyQuiz;
 				PRODUCT_NAME = HeadyQuiz;
 				SWIFT_VERSION = 5.0;
@@ -343,7 +383,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6P97WW4QGA;
 				INFOPLIST_FILE = HeadyQuiz/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikewath.HeadyQuiz;
 				PRODUCT_NAME = HeadyQuiz;
 				SWIFT_VERSION = 5.0;

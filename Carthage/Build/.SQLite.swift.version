@@ -1,0 +1,60 @@
+{
+  "Mac" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "28007c02bd91491fa9cdac8bb8b9a5a482de4339d53073b2dba30aeb3701be9c",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "macos-arm64_x86_64"
+    }
+  ],
+  "watchOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "0ce83bea957a2ea191ec31334f471c619d854101d025c2c9bd66f3e18a0a2fd2",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "watchos-arm64_32_armv7k"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "64a9333787b002f3612ee5a5f7f0a435673391d4ed677c39ae5ee149f68036ee",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "watchos-arm64_i386_x86_64-simulator"
+    }
+  ],
+  "tvOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "a36357c966d691705af7110829dcc93fba9a0f97809005b8307919e263d06aad",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "tvos-arm64_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "321957bf13e1e3632a3e325d824a7f7f9cda30e0e6070d7e254527a3fa723151",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "tvos-arm64"
+    }
+  ],
+  "commitish" : "0.12.2",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "252c84079e1ef56ad5d0979943ae19e5ea1e865326f0447cfd4da35b042b3036",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "fd76b04b6bf86b8a2e41866379385d2a314f00bea563fca5495aa402dfdf302b",
+      "name" : "SQLite",
+      "container" : "SQLite.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}

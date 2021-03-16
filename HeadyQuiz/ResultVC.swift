@@ -4,11 +4,14 @@
 //
 
 import UIKit
+import Foundation
+import SQLite
 
 class ResultVC: UIViewController {
     
     var score: Int?
     var totalScore: Int?
+    var score_s: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,27 +24,58 @@ class ResultVC: UIViewController {
         var rating = ""
         var color = UIColor.black
         guard let sc = score, let tc = totalScore else { return }
-        let s = sc * 100 / tc
-        if s < 10 {
+        let score_s = sc * 100 / tc
+        if score_s < 10 {
             rating = "Poor - F"
             color = UIColor.darkGray
-        }  else if s < 40 {
+        }  else if score_s < 40 {
             rating = "Average - C"
             color = UIColor.blue
-        } else if s < 60 {
+        } else if score_s < 60 {
             rating = "Good - B-"
             color = UIColor.yellow
-        } else if s < 80 {
+        } else if score_s < 80 {
             rating = "Excellent - A"
             color = UIColor.red
-        } else if s <= 100 {
+        } else if score_s <= 100 {
             rating = "Outstanding - A+"
             color = UIColor.orange
         }
         lblRating.text = "\(rating)"
         lblRating.textColor=color
+        
+        do {
+            let databaseFileName = "HeadyQuiz.sqlite3"
+            let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
+            let db = try Connection(databaseFilePath)
+            
+            let uuid_string = UIDevice.current.identifierForVendor!.uuidString
+
+            let results = Table("results")
+            let id = Expression<Int64>("id")
+            let uuid = Expression<String>("uuid")
+            let scores = Expression<Int>("scores")
+                
+            try db.run(results.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: true)
+                t.column(uuid)
+                t.column(scores)
+            })
+            
+            let insert = results.insert(uuid <- uuid_string, scores <- score_s)
+            let _ = try db.run(insert)
+                        
+            for result in try db.prepare(results) {
+                print("id: \(result[uuid]), scores: \(result[scores])")
+            }
+            
+        } catch {
+          print("Could not make connection")
+          print("Unexpected error: \(error).")
+        }
+
     }
-    
+
     @objc func btnRestartAction() {
         self.navigationController?.popToRootViewController(animated: true)
     }

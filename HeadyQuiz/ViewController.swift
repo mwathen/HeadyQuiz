@@ -6,7 +6,7 @@
 import UIKit
 import AVFoundation
 import SwiftUI
-
+import SQLite
 
 extension UIView {
 
@@ -18,7 +18,6 @@ extension UIView {
             layer.add(animation, forKey: CATransitionType.fade.rawValue)
         }
     }
-
 
 class ViewController: UIViewController {
     
@@ -40,6 +39,41 @@ class ViewController: UIViewController {
         moveIt(imgView,1.5,0,xPosition)
         
         playSound()
+        
+        do {
+            let databaseFileName = "HeadyQuiz.sqlite3"
+            let databaseFilePath = "\(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])/\(databaseFileName)"
+            let db = try Connection(databaseFilePath)
+            
+            let uuid_string = UIDevice.current.identifierForVendor!.uuidString
+
+            print(uuid_string)
+            let results = Table("results")
+            let uuid = Expression<String>("uuid")
+            let scores = Expression<Int>("scores")
+            
+            for result in try db.prepare(results.filter(uuid == uuid)) {
+                print("id: \(result[uuid]), scores: \(result[scores])")
+                lblLastScore.text = "Last Score: "+String(result[scores])
+            }
+            
+            let result = results.filter(uuid == uuid_string)
+            
+            do {
+                if try db.run(result.delete()) > 0 {
+                    print("deleted result")
+                } else {
+                    print("result not found")
+                }
+            } catch {
+                print("delete failed: \(error)")
+            }
+            
+        } catch {
+          print("Could not make connection")
+          print("Unexpected error: \(error).")
+        }
+
     }
     
     @objc func btnGetStartedAction() {
@@ -73,6 +107,12 @@ class ViewController: UIViewController {
         btnGetStarted.bottomAnchor
             .constraint(equalTo: self.view.bottomAnchor, constant: -180).isActive=true
         
+        self.view.addSubview(lblLastScore)
+        lblLastScore.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        lblLastScore.widthAnchor.constraint(equalToConstant: 150).isActive=true
+        lblLastScore.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        lblLastScore.bottomAnchor
+            .constraint(equalTo: self.view.bottomAnchor, constant: -120).isActive=true
         
         lblTitle.alpha = 0.0
         UIView.animate(withDuration: 1.0) {
@@ -151,6 +191,17 @@ class ViewController: UIViewController {
         lbl.font = UIFontMetrics.default.scaledFont(for: customFont)
         //lbl.font = UIFont.systemFont(ofSize: 46)
         lbl.numberOfLines=2
+        lbl.translatesAutoresizingMaskIntoConstraints=false
+
+        return lbl
+    }()
+    
+    let lblLastScore: UILabel = {
+        
+        let lbl=UILabel()
+        
+        lbl.textColor=UIColor(hue: 0.6833, saturation: 1, brightness: 0.59, alpha: 1.0)
+        lbl.textAlignment = .center
         lbl.translatesAutoresizingMaskIntoConstraints=false
 
         return lbl
