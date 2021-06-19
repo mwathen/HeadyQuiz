@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SQLite-Swift.h</key>
 		<data>
-		SQVYzSHkQV4rTataIfKacS+lbIQ=
+		+XIPMcSAO6g85XENK+DslpUiPu4=
 		</data>
 		<key>Headers/SQLite.h</key>
 		<data>
@@ -18,79 +18,79 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HeWEeF6NVtvXzETvRF65pW2AdBY=
+		Gb/WS55xnENwmRfltgCJ8Vbu6sY=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/arm64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		KKejA6dvk5QhJsTgdAATK0KfYao=
+		qdh/AkvBrFNsmHvI0eqvNvbjHAk=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		KKejA6dvk5QhJsTgdAATK0KfYao=
+		qdh/AkvBrFNsmHvI0eqvNvbjHAk=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/i386-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		FRALFMpcwQmHs2xm6f6oUG3pzZM=
+		cXt9bkMIfdY5ZZiXyFjIEJ6KF7Q=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<data>
-		FRALFMpcwQmHs2xm6f6oUG3pzZM=
+		cXt9bkMIfdY5ZZiXyFjIEJ6KF7Q=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		8JxMPHplBDLrItvDBU9n4Dl3xJY=
+		jNrzKJjyfORQP1YC6wBjuju5WYU=
 		</data>
 		<key>Modules/SQLite.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		8JxMPHplBDLrItvDBU9n4Dl3xJY=
+		jNrzKJjyfORQP1YC6wBjuju5WYU=
 		</data>
 		<key>Modules/SQLite.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		O9OTgQOlRW6BWlsKg3KdWLyOegk=
+		ezCaVO3a70QT1VpxNuGA9NOI+/8=
 		</data>
 		<key>Modules/SQLite.swiftmodule/arm64-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		Iua0B4RqevdiDoCkLPnpfaMxzQY=
+		Nr+1oMBfki5m58xBtXXRP6FLgmA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		O9OTgQOlRW6BWlsKg3KdWLyOegk=
+		ezCaVO3a70QT1VpxNuGA9NOI+/8=
 		</data>
 		<key>Modules/SQLite.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Iua0B4RqevdiDoCkLPnpfaMxzQY=
+		Nr+1oMBfki5m58xBtXXRP6FLgmA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/i386-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		+KAmRwFdQTXnQBM96tHNS8vxwQE=
+		LmVz0MptI52MZ6yUOyvKkI33rYA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/i386-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		5aVVgsUHuaNJnYNN7mWVYWdQ23I=
+		7GntJ6DZv0PEXptgEisOMELodbA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/i386.swiftdoc</key>
 		<data>
-		+KAmRwFdQTXnQBM96tHNS8vxwQE=
+		LmVz0MptI52MZ6yUOyvKkI33rYA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/i386.swiftmodule</key>
 		<data>
-		5aVVgsUHuaNJnYNN7mWVYWdQ23I=
+		7GntJ6DZv0PEXptgEisOMELodbA=
 		</data>
 		<key>Modules/SQLite.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		PhhuMw43wQpKHehCSEQltRCKt5A=
+		6wZc9zxnNrJ++qLLA5mEqvttIyQ=
 		</data>
 		<key>Modules/SQLite.swiftmodule/x86_64-apple-watchos-simulator.swiftmodule</key>
 		<data>
-		GuZujKRzel1uEm+YFnPK30HfejA=
+		u+MmztjNPNEJBg45BYMAWN/YyPM=
 		</data>
 		<key>Modules/SQLite.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		PhhuMw43wQpKHehCSEQltRCKt5A=
+		6wZc9zxnNrJ++qLLA5mEqvttIyQ=
 		</data>
 		<key>Modules/SQLite.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		GuZujKRzel1uEm+YFnPK30HfejA=
+		u+MmztjNPNEJBg45BYMAWN/YyPM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -103,11 +103,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SQVYzSHkQV4rTataIfKacS+lbIQ=
+			+XIPMcSAO6g85XENK+DslpUiPu4=
 			</data>
 			<key>hash2</key>
 			<data>
-			n7DVDlJTmUfbnpFAfqPFMUoz9xF90Dq/d6Dz3yjyuZo=
+			1MQ1qZjwXCParCAmiNhGDOz3HH3x/OGlSZUnH9YJQzA=
 			</data>
 		</dict>
 		<key>Headers/SQLite.h</key>
@@ -136,198 +136,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KKejA6dvk5QhJsTgdAATK0KfYao=
+			qdh/AkvBrFNsmHvI0eqvNvbjHAk=
 			</data>
 			<key>hash2</key>
 			<data>
-			39BycbkfOi0eXt1+z2Ll7/fe7oxnRen34pM1hGHoqd0=
+			4boAUlFfx9ofb1QR6CUeD3neOS1N9P9oWWhSfSUYXcM=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KKejA6dvk5QhJsTgdAATK0KfYao=
+			qdh/AkvBrFNsmHvI0eqvNvbjHAk=
 			</data>
 			<key>hash2</key>
 			<data>
-			39BycbkfOi0eXt1+z2Ll7/fe7oxnRen34pM1hGHoqd0=
+			4boAUlFfx9ofb1QR6CUeD3neOS1N9P9oWWhSfSUYXcM=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/Project/i386-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FRALFMpcwQmHs2xm6f6oUG3pzZM=
+			cXt9bkMIfdY5ZZiXyFjIEJ6KF7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			BuFonh+V3kY1PjoTmqmAu50GzUi5MGTJsVuJKi13Q7A=
+			5xri2a8h2s20K4P91nRmCn3B4GwQBIM11FUuu35Coc4=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FRALFMpcwQmHs2xm6f6oUG3pzZM=
+			cXt9bkMIfdY5ZZiXyFjIEJ6KF7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			BuFonh+V3kY1PjoTmqmAu50GzUi5MGTJsVuJKi13Q7A=
+			5xri2a8h2s20K4P91nRmCn3B4GwQBIM11FUuu35Coc4=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8JxMPHplBDLrItvDBU9n4Dl3xJY=
+			jNrzKJjyfORQP1YC6wBjuju5WYU=
 			</data>
 			<key>hash2</key>
 			<data>
-			BkC20ROoPKHThx5M58cLB9fZ0MjkVCqNU/aseDI0K3Y=
+			SAOsNhuqIdws9RSMe/hylySdWE/2e/TMqkI+Tvi/zMo=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8JxMPHplBDLrItvDBU9n4Dl3xJY=
+			jNrzKJjyfORQP1YC6wBjuju5WYU=
 			</data>
 			<key>hash2</key>
 			<data>
-			BkC20ROoPKHThx5M58cLB9fZ0MjkVCqNU/aseDI0K3Y=
+			SAOsNhuqIdws9RSMe/hylySdWE/2e/TMqkI+Tvi/zMo=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			O9OTgQOlRW6BWlsKg3KdWLyOegk=
+			ezCaVO3a70QT1VpxNuGA9NOI+/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			kzPtOgghRiFAF+C7lUzH0L0c9VjKHouYhColHmPTchA=
+			N2KsDRjmz8GYUkPgSLKrHltb4CbU+9Eb47+D4MXKOSA=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/arm64-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Iua0B4RqevdiDoCkLPnpfaMxzQY=
+			Nr+1oMBfki5m58xBtXXRP6FLgmA=
 			</data>
 			<key>hash2</key>
 			<data>
-			6jh6ThdF9Yi7ZPy8nW8ld1WxsslPofC9IBs0BAlM9gk=
+			4Bzrr7twd3qGCaCGc8z12CsNoiyag5iA0MGNd7rcFNk=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			O9OTgQOlRW6BWlsKg3KdWLyOegk=
+			ezCaVO3a70QT1VpxNuGA9NOI+/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			kzPtOgghRiFAF+C7lUzH0L0c9VjKHouYhColHmPTchA=
+			N2KsDRjmz8GYUkPgSLKrHltb4CbU+9Eb47+D4MXKOSA=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Iua0B4RqevdiDoCkLPnpfaMxzQY=
+			Nr+1oMBfki5m58xBtXXRP6FLgmA=
 			</data>
 			<key>hash2</key>
 			<data>
-			6jh6ThdF9Yi7ZPy8nW8ld1WxsslPofC9IBs0BAlM9gk=
+			4Bzrr7twd3qGCaCGc8z12CsNoiyag5iA0MGNd7rcFNk=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/i386-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+KAmRwFdQTXnQBM96tHNS8vxwQE=
+			LmVz0MptI52MZ6yUOyvKkI33rYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			LmjJka39VUtLxIhDwNKxJaQmNN3QTDjgrful8TCHAWI=
+			OEf5/cEsjulOw50dSz2ZuUJcWSonzEs7DqNT8qJ9Oyk=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/i386-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5aVVgsUHuaNJnYNN7mWVYWdQ23I=
+			7GntJ6DZv0PEXptgEisOMELodbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			74++5yaJ06ClBL2LeA6qmdy724P+zYcyt4UiD6C6fPc=
+			7+l1U1Dsfkcmh5HOoP+LczX3VXhI2Gq3HZYA7reAuvM=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+KAmRwFdQTXnQBM96tHNS8vxwQE=
+			LmVz0MptI52MZ6yUOyvKkI33rYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			LmjJka39VUtLxIhDwNKxJaQmNN3QTDjgrful8TCHAWI=
+			OEf5/cEsjulOw50dSz2ZuUJcWSonzEs7DqNT8qJ9Oyk=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5aVVgsUHuaNJnYNN7mWVYWdQ23I=
+			7GntJ6DZv0PEXptgEisOMELodbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			74++5yaJ06ClBL2LeA6qmdy724P+zYcyt4UiD6C6fPc=
+			7+l1U1Dsfkcmh5HOoP+LczX3VXhI2Gq3HZYA7reAuvM=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PhhuMw43wQpKHehCSEQltRCKt5A=
+			6wZc9zxnNrJ++qLLA5mEqvttIyQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			0FXhMyACCT7fKuwGAKjEe8hITSf+SwSAx6DSHFbdjhs=
+			virMiCE07/FHh78hmxU6iTTSeNEOZUYe23ia+re+VtI=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/x86_64-apple-watchos-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GuZujKRzel1uEm+YFnPK30HfejA=
+			u+MmztjNPNEJBg45BYMAWN/YyPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			yCtJxVzLqG+1LzgxGk8biLrpGjhUjmqKSdkUScCFJfQ=
+			lK6qYSr8GmKcWVpq+U++7JTvl0QkTUhz7iyvYePKDl0=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PhhuMw43wQpKHehCSEQltRCKt5A=
+			6wZc9zxnNrJ++qLLA5mEqvttIyQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			0FXhMyACCT7fKuwGAKjEe8hITSf+SwSAx6DSHFbdjhs=
+			virMiCE07/FHh78hmxU6iTTSeNEOZUYe23ia+re+VtI=
 			</data>
 		</dict>
 		<key>Modules/SQLite.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GuZujKRzel1uEm+YFnPK30HfejA=
+			u+MmztjNPNEJBg45BYMAWN/YyPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			yCtJxVzLqG+1LzgxGk8biLrpGjhUjmqKSdkUScCFJfQ=
+			lK6qYSr8GmKcWVpq+U++7JTvl0QkTUhz7iyvYePKDl0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

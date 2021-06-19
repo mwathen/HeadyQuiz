@@ -15,6 +15,7 @@
 		509563B325F087A00081A7BD /* stash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 509563B225F087A00081A7BD /* stash.mp3 */; };
 		5096C62C25EC4F48001D7761 /* phish2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62B25EC4F48001D7761 /* phish2.jpg */; };
 		5096C62F25EC522F001D7761 /* widespread_panic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5096C62E25EC522F001D7761 /* widespread_panic.jpg */; };
+		509F764A2601681400B8D3AF /* IMG_1877.mov in Resources */ = {isa = PBXBuildFile; fileRef = 509F76492601681400B8D3AF /* IMG_1877.mov */; };
 		50AB481F255C959C006D1D5B /* grateful_dead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50AB481E255C959B006D1D5B /* grateful_dead.jpg */; };
 		D953D90F1FAD9C7600288DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D90E1FAD9C7600288DDF /* AppDelegate.swift */; };
 		D953D9111FAD9C7600288DDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953D9101FAD9C7600288DDF /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		509563B225F087A00081A7BD /* stash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stash.mp3; sourceTree = "<group>"; };
 		5096C62B25EC4F48001D7761 /* phish2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phish2.jpg; sourceTree = "<group>"; };
 		5096C62E25EC522F001D7761 /* widespread_panic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = widespread_panic.jpg; sourceTree = "<group>"; };
+		509F76492601681400B8D3AF /* IMG_1877.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_1877.mov; path = ../../../../../../Downloads/IMG_1877.mov; sourceTree = "<group>"; };
 		50AB481E255C959B006D1D5B /* grateful_dead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grateful_dead.jpg; path = HeadyQuiz/images_all/grateful_dead.jpg; sourceTree = SOURCE_ROOT; };
 		D953D90B1FAD9C7600288DDF /* HeadyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D953D90E1FAD9C7600288DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,17 +94,11 @@
 		509563B125F087780081A7BD /* audio_all */ = {
 			isa = PBXGroup;
 			children = (
+				509F76492601681400B8D3AF /* IMG_1877.mov */,
 				509563B225F087A00081A7BD /* stash.mp3 */,
 				503205BE23726381001B2A5A /* caseyjones_short.mp3 */,
 			);
 			path = audio_all;
-			sourceTree = "<group>";
-		};
-		50B9D6212601017D00C1E991 /* db */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = db;
 			sourceTree = "<group>";
 		};
 		D953D9021FAD9C7600288DDF = {
@@ -125,7 +121,6 @@
 		D953D90D1FAD9C7600288DDF /* HeadyQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				50B9D6212601017D00C1E991 /* db */,
 				509563B125F087780081A7BD /* audio_all */,
 				509563B025F0872F0081A7BD /* images_all */,
 				500655ED2363955000C4A00C /* RecordsHeady.plist */,
@@ -204,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503205BD23711AE5001B2A5A /* Belbott0.ttf in Resources */,
+				509F764A2601681400B8D3AF /* IMG_1877.mov in Resources */,
 				509563B325F087A00081A7BD /* stash.mp3 in Resources */,
 				5096C62C25EC4F48001D7761 /* phish2.jpg in Resources */,
 				D953D9191FAD9C7600288DDF /* LaunchScreen.storyboard in Resources */,
@@ -301,6 +297,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -354,6 +352,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
