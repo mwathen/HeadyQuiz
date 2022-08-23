@@ -1,9 +1,9 @@
 # SQLite.swift Documentation
 
   - [Installation](#installation)
+    - [Swift Package Manager](#swift-package-manager)
     - [Carthage](#carthage)
     - [CocoaPods](#cocoapods)
-    - [Swift Package Manager](#swift-package-manager)
     - [Manual](#manual)
   - [Getting Started](#getting-started)
     - [Connecting to a Database](#connecting-to-a-database)
@@ -35,6 +35,7 @@
       - [Sorting Rows](#sorting-rows)
       - [Limiting and Paging Results](#limiting-and-paging-results)
       - [Aggregation](#aggregation)
+  - [Upserting Rows](#upserting-rows)
   - [Updating Rows](#updating-rows)
   - [Deleting Rows](#deleting-rows)
   - [Transactions and Savepoints](#transactions-and-savepoints)
@@ -70,6 +71,27 @@
 > _Note:_ SQLite.swift requires Swift 5 (and
 > [Xcode 10.2](https://developer.apple.com/xcode/downloads/)) or greater.
 
+### Swift Package Manager
+
+The [Swift Package Manager][] is a tool for managing the distribution of
+Swift code. It’s integrated with the Swift build system to automate the
+process of downloading, compiling, and linking dependencies.
+
+ 1. Add the following to your `Package.swift` file:
+
+  ```swift
+  dependencies: [
+    .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.13.3")
+  ]
+  ```
+
+ 2. Build your project:
+
+  ```sh
+  $ swift build
+  ```
+
+[Swift Package Manager]: https://swift.org/package-manager
 
 ### Carthage
 
@@ -80,7 +102,7 @@ install SQLite.swift with Carthage:
  2. Update your Cartfile to include the following:
 
     ```ruby
-    github "stephencelis/SQLite.swift" ~> 0.12.0
+    github "stephencelis/SQLite.swift" ~> 0.13.3
     ```
 
  3. Run `carthage update` and [add the appropriate framework][Carthage Usage].
@@ -110,7 +132,7 @@ install SQLite.swift with Carthage:
     use_frameworks!
 
     target 'YourAppTargetName' do
-        pod 'SQLite.swift', '~> 0.12.0'
+        pod 'SQLite.swift', '~> 0.13.3'
     end
     ```
 
@@ -124,7 +146,7 @@ with the OS you can require the `standalone` subspec:
 
 ```ruby
 target 'YourAppTargetName' do
-  pod 'SQLite.swift/standalone', '~> 0.12.0'
+  pod 'SQLite.swift/standalone', '~> 0.13.3'
 end
 ```
 
@@ -134,7 +156,7 @@ dependency to sqlite3 or one of its subspecs:
 
 ```ruby
 target 'YourAppTargetName' do
-  pod 'SQLite.swift/standalone', '~> 0.12.0'
+  pod 'SQLite.swift/standalone', '~> 0.13.3'
   pod 'sqlite3/fts5', '= 3.15.0'  # SQLite 3.15.0 with FTS5 enabled
 end
 ```
@@ -148,7 +170,9 @@ If you want to use [SQLCipher][] with SQLite.swift you can require the
 
 ```ruby
 target 'YourAppTargetName' do
-  pod 'SQLite.swift/SQLCipher', '~> 0.12.0'
+  # Make sure you only require the subspec, otherwise you app might link against
+  # the system SQLite, which means the SQLCipher-specific methods won't work.
+  pod 'SQLite.swift/SQLCipher', '~> 0.13.3'
 end
 ```
 
@@ -167,31 +191,6 @@ try db.rekey("another secret")
 [CocoaPods Installation]: https://guides.cocoapods.org/using/getting-started.html#getting-started
 [sqlite3pod]: https://github.com/clemensg/sqlite3pod
 [SQLCipher]: https://www.zetetic.net/sqlcipher/
-
-### Swift Package Manager
-
-The [Swift Package Manager][] is a tool for managing the distribution of
-Swift code. It’s integrated with the Swift build system to automate the
-process of downloading, compiling, and linking dependencies.
-
-It is the recommended approach for using SQLite.swift in OSX CLI
-applications.
-
- 1. Add the following to your `Package.swift` file:
-
-  ```swift
-  dependencies: [
-    .package(url: "https://github.com/stephencelis/SQLite.swift.git", from: "0.12.0")
-  ]
-  ```
-
- 2. Build your project:
-
-  ```sh
-  $ swift build
-  ```
-
-[Swift Package Manager]: https://swift.org/package-manager
 
 ### Manual
 
@@ -258,7 +257,26 @@ let path = NSSearchPathForDirectoriesInDomains(
 let db = try Connection("\(path)/db.sqlite3")
 ```
 
+If you have bundled it in your application, you can use FileManager to copy it to the Documents directory:
+
+```swift
+func copyDatabaseIfNeeded(sourcePath: String) -> Bool {
+    let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+    let destinationPath = documents + "/db.sqlite3"
+    let exists = FileManager.default.fileExists(atPath: destinationPath)
+    guard !exists else { return false }
+    do {
+        try FileManager.default.copyItem(atPath: sourcePath, toPath: destinationPath)
+        return true
+    } catch {
+      print("error during file copy: \(error)")
+	    return false
+    }
+}
+```
+
 On macOS, you can use your app’s **Application Support** directory:
+
 
 ```swift
 var path = NSSearchPathForDirectoriesInDomains(
@@ -266,13 +284,12 @@ var path = NSSearchPathForDirectoriesInDomains(
 ).first! + "/" + Bundle.main.bundleIdentifier!
 
 // create parent directory iff it doesn’t exist
-try FileManager.default.createDirectoryAtPath(
-    path, withIntermediateDirectories: true, attributes: nil
+try FileManager.default.createDirectory(
+atPath: path, withIntermediateDirectories: true, attributes: nil
 )
 
 let db = try Connection("\(path)/db.sqlite3")
 ```
-
 
 #### Read-Only Databases
 
@@ -295,7 +312,7 @@ let db = try Connection(path, readonly: true)
 > See these two Stack Overflow questions for more information about iOS apps
 > with SQLite databases: [1](https://stackoverflow.com/questions/34609746/what-different-between-store-database-in-different-locations-in-ios),
 > [2](https://stackoverflow.com/questions/34614968/ios-how-to-copy-pre-seeded-database-at-the-first-running-app-with-sqlite-swift).
-> We welcome sample code to show how to successfully copy and use a bundled "seed"
+> We welcome changes to the above sample code to show how to successfully copy and use a bundled "seed"
 > database for writing in an app.
 
 #### In-Memory Databases
@@ -324,16 +341,15 @@ execution and can be safely accessed across threads. Threads that open
 transactions and savepoints will block other threads from executing
 statements while the transaction is open.
 
-If you maintain multiple connections for a single database, consider setting a timeout (in seconds) and/or a busy handler:
+If you maintain multiple connections for a single database, consider setting a timeout
+(in seconds) *or* a busy handler. There can only be one active at a time, so setting a busy
+handler will effectively override `busyTimeout`.
 
 ```swift
-db.busyTimeout = 5
+db.busyTimeout = 5 // error after 5 seconds (does multiple retries)
 
 db.busyHandler({ tries in
-    if tries >= 3 {
-        return false
-    }
-    return true
+    tries < 3  // error after 3 tries
 })
 ```
 
@@ -638,6 +654,19 @@ do {
 }
 ```
 
+Multiple rows can be inserted at once by similarily calling `insertMany` with an array of
+per-row [setters](#setters).
+
+```swift
+do {
+    let lastRowid = try db.run(users.insertMany([mail <- "alice@mac.com"], [email <- "geoff@mac.com"]))
+    print("last inserted id: \(lastRowid)")
+} catch {
+    print("insertion failed: \(error)")
+}
+```
+
+
 The [`update`](#updating-rows) and [`delete`](#deleting-rows) functions
 follow similar patterns.
 
@@ -766,6 +795,42 @@ for user in try db.prepare(users) {
     } catch {
         // handle
     }
+}
+```
+
+Note that the iterator can throw *undeclared* database errors at any point during
+iteration:
+
+```swift
+let query = try db.prepare(users)
+for user in query {
+    // 💥 can throw an error here
+}
+````
+
+#### Failable iteration
+
+It is therefore recommended using the `RowIterator` API instead,
+which has explicit error handling:
+
+```swift
+// option 1: convert results into an Array of rows
+let rowIterator = try db.prepareRowIterator(users)
+for user in try Array(rowIterator) {
+    print("id: \(user[id]), email: \(user[email])")
+}
+
+/// option 2: transform results using `map()`
+let mapRowIterator = try db.prepareRowIterator(users)
+let userIds = try mapRowIterator.map { $0[id] }
+
+/// option 3: handle each row individually with `failableNext()`
+do {
+    while let row = try rowIterator.failableNext() {
+        // Handle row
+    }
+} catch {
+    // Handle error
 }
 ```
 
@@ -955,8 +1020,10 @@ equate or compare different types will prevent compilation.
 | `~=`  | `(Interval, Comparable) -> Bool` | `BETWEEN`      |
 | `&&`  | `Bool -> Bool`                   | `AND`          |
 | `\|\|`| `Bool -> Bool`                   | `OR`           |
+| `===` | `Equatable -> Bool`              | `IS`           |
+| `!==` | `Equatable -> Bool`              | `IS NOT`       |
 
-> *When comparing against `nil`, SQLite.swift will use `IS` and `IS NOT`
+> * When comparing against `nil`, SQLite.swift will use `IS` and `IS NOT`
 > accordingly.
 
 
@@ -1098,6 +1165,33 @@ let count = try db.scalar(users.filter(name != nil).count)
 > // SELECT count(DISTINCT "name") FROM "users"
 > ```
 
+## Upserting Rows
+
+We can upsert rows into a table by calling a [query’s](#queries) `upsert`
+function with a list of [setters](#setters)—typically [typed column
+expressions](#expressions) and values (which can also be expressions)—each
+joined by the `<-` operator. Upserting is like inserting, except if there is a 
+conflict on the specified column value, SQLite will perform an update on the row instead.
+
+```swift
+try db.run(users.upsert(email <- "alice@mac.com", name <- "Alice", onConflictOf: email))
+// INSERT INTO "users" ("email", "name") VALUES ('alice@mac.com', 'Alice') ON CONFLICT (\"email\") DO UPDATE SET \"name\" = \"excluded\".\"name\"
+```
+
+The `upsert` function, when run successfully, returns an `Int64` representing
+the inserted row’s [`ROWID`][ROWID].
+
+```swift
+do {
+    let rowid = try db.run(users.upsert(email <- "alice@mac.com", name <- "Alice", onConflictOf: email))
+    print("inserted id: \(rowid)")
+} catch {
+    print("insertion failed: \(error)")
+}
+```
+
+The [`insert`](#inserting-rows), [`update`](#updating-rows), and [`delete`](#deleting-rows) functions
+follow similar patterns.
 
 ## Updating Rows
 
@@ -1226,7 +1320,6 @@ try db.run(users.addColumn(suffix))
 // ALTER TABLE "users" ADD COLUMN "suffix" TEXT
 ```
 
-
 #### Added Column Constraints
 
 The `addColumn` function shares several of the same [`column` function
@@ -1278,6 +1371,13 @@ tables](#creating-a-table).
     // ALTER TABLE "posts" ADD COLUMN "user_id" INTEGER REFERENCES "users" ("id")
     ```
 
+### Renaming Columns
+
+Added in SQLite 3.25.0, not exposed yet. [#1073](https://github.com/stephencelis/SQLite.swift/issues/1073)
+
+### Dropping Columns
+
+Added in SQLite 3.35.0, not exposed yet. [#1073](https://github.com/stephencelis/SQLite.swift/issues/1073)
 
 ### Indexes
 
@@ -1357,21 +1457,11 @@ try db.run(users.drop(ifExists: true))
 
 ### Migrations and Schema Versioning
 
-You can add a convenience property on `Connection` to query and set the
+You can use the convenience property on `Connection` to query and set the
 [`PRAGMA user_version`](https://sqlite.org/pragma.html#pragma_user_version).
 
 This is a great way to manage your schema’s version over migrations.
-
-```swift
-extension Connection {
-    public var userVersion: Int32 {
-        get { return Int32(try! scalar("PRAGMA user_version") as! Int64)}
-        set { try! run("PRAGMA user_version = \(newValue)") }
-    }
-}
-```
-
-Then you can conditionally run your migrations along the lines of:
+You can conditionally run your migrations along the lines of:
 
 ```swift
 if db.userVersion == 0 {
@@ -1557,7 +1647,7 @@ Both of the above methods also have the following optional parameter:
 There are a few restrictions on using Codable types:
 
 - The encodable and decodable objects can only use the following types:
-    - Int, Bool, Float, Double, String
+    - Int, Bool, Float, Double, String, Date
     - Nested Codable types that will be encoded as JSON to a single column
 - These methods will not handle object relationships for you. You must write
   your own Codable and Decodable implementations if you wish to support this.
@@ -1703,6 +1793,19 @@ for row in stmt.bind(kUTTypeImage) { /* ... */ }
 
 [UTTypeConformsTo]: https://developer.apple.com/documentation/coreservices/1444079-uttypeconformsto
 
+## Custom Aggregations
+
+We can create custom aggregation functions by calling `createAggregation`:
+
+```swift
+let reduce: (String, [Binding?]) -> String = { (last, bindings) in
+    last + " " + (bindings.first as? String ?? "")
+}
+
+db.createAggregation("customConcat", initialValue: "", reduce: reduce, result: { $0 })
+let result = db.prepare("SELECT customConcat(email) FROM users").scalar() as! String
+```
+
 ## Custom Collations
 
 We can create custom collating sequences by calling `createCollation` on a
@@ -1792,12 +1895,12 @@ let config = FTS5Config()
     .column(subject)
     .column(body, [.unindexed])
 
-try db.run(emails.create(.FTS5(config))
+try db.run(emails.create(.FTS5(config)))
 // CREATE VIRTUAL TABLE "emails" USING fts5("subject", "body" UNINDEXED)
 
 // Note that FTS5 uses a different syntax to select columns, so we need to rewrite
 // the last FTS4 query above as:
-let replies = emails.filter(emails.match("subject:\"Re:\"*))
+let replies = emails.filter(emails.match("subject:\"Re:\"*"))
 // SELECT * FROM "emails" WHERE "emails" MATCH 'subject:"Re:"*'
 
 // https://www.sqlite.org/fts5.html#_changes_to_select_statements_
@@ -1860,6 +1963,14 @@ using the following functions.
         }
     }
     ```
+    Statements with results may be iterated over, using a `RowIterator` if
+    useful.
+    
+    ```swift
+    let emailColumn = Expression<String>("email")
+    let stmt = try db.prepare("SELECT id, email FROM users")
+    let emails = try! stmt.prepareRowIterator().map { $0[emailColumn] }
+    ```
 
   - `run` prepares a single `Statement` object from a SQL string, optionally
     binds values to it (using the statement’s `bind` function), executes,
@@ -1885,6 +1996,19 @@ using the following functions.
     let count = try stmt.scalar() as! Int64
     ```
 
+## Online Database Backup
+
+To copy a database to another using the
+[SQLite Online Backup API](https://sqlite.org/backup.html):
+
+```swift
+// creates an in-memory copy of db.sqlite
+let db = try Connection("db.sqlite")
+let target = try Connection(.inMemory)
+
+let backup = try db.backup(usingConnection: target)
+try backup.step()
+```
 
 ## Logging
 
@@ -1894,6 +2018,14 @@ We can log SQL using the database’s `trace` function.
 #if DEBUG
     db.trace { print($0) }
 #endif
+```
+
+## Vacuum
+
+To run the [vacuum](https://www.sqlite.org/lang_vacuum.html) command:
+
+```swift
+try db.vacuum()
 ```
 
 

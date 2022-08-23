@@ -1,7 +1,7 @@
 import XCTest
 import SQLite
 
-class SchemaTests : XCTestCase {
+class SchemaTests: XCTestCase {
 
     func test_drop_compilesDropTableExpression() {
         XCTAssertEqual("DROP TABLE \"table\"", table.drop())
@@ -318,6 +318,10 @@ class SchemaTests : XCTestCase {
             table.create { t in t.column(int64, unique: true, references: table, int64) }
         )
         XCTAssertEqual(
+            "CREATE TABLE \"table\" (\"int64\" INTEGER PRIMARY KEY NOT NULL REFERENCES \"table\" (\"int64\"))",
+            table.create { t in t.column(int64, primaryKey: true, references: table, int64) }
+        )
+        XCTAssertEqual(
             "CREATE TABLE \"table\" (\"int64\" INTEGER NOT NULL CHECK (\"int64\" > 0) REFERENCES \"table\" (\"int64\"))",
             table.create { t in t.column(int64, check: int64 > 0, references: table, int64) }
         )
@@ -330,8 +334,22 @@ class SchemaTests : XCTestCase {
             table.create { t in t.column(int64, unique: true, check: int64 > 0, references: table, int64) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"int64\" INTEGER NOT NULL UNIQUE CHECK (\"int64Optional\" > 0) REFERENCES \"table\" (\"int64\"))",
+            "CREATE TABLE \"table\" (\"int64\" INTEGER PRIMARY KEY NOT NULL CHECK (\"int64\" > 0) REFERENCES \"table\" (\"int64\"))",
+            table.create { t in t.column(int64, primaryKey: true, check: int64 > 0, references: table, int64) }
+        )
+        XCTAssertEqual(
+            """
+            CREATE TABLE \"table\" (\"int64\" INTEGER NOT NULL UNIQUE CHECK (\"int64Optional\" > 0) REFERENCES
+             \"table\" (\"int64\"))
+            """.replacingOccurrences(of: "\n", with: ""),
             table.create { t in t.column(int64, unique: true, check: int64Optional > 0, references: table, int64) }
+        )
+        XCTAssertEqual(
+            """
+            CREATE TABLE \"table\" (\"int64\" INTEGER PRIMARY KEY NOT NULL CHECK (\"int64Optional\" > 0) REFERENCES
+             \"table\" (\"int64\"))
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(int64, primaryKey: true, check: int64Optional > 0, references: table, int64) }
         )
 
         XCTAssertEqual(
@@ -341,6 +359,10 @@ class SchemaTests : XCTestCase {
         XCTAssertEqual(
             "CREATE TABLE \"table\" (\"int64Optional\" INTEGER UNIQUE REFERENCES \"table\" (\"int64\"))",
             table.create { t in t.column(int64Optional, unique: true, references: table, int64) }
+        )
+        XCTAssertEqual(
+            "CREATE TABLE \"table\" (\"int64Optional\" INTEGER PRIMARY KEY REFERENCES \"table\" (\"int64\"))",
+            table.create { t in t.column(int64Optional, primaryKey: true, references: table, int64) }
         )
         XCTAssertEqual(
             "CREATE TABLE \"table\" (\"int64Optional\" INTEGER CHECK (\"int64\" > 0) REFERENCES \"table\" (\"int64\"))",
@@ -355,8 +377,16 @@ class SchemaTests : XCTestCase {
             table.create { t in t.column(int64Optional, unique: true, check: int64 > 0, references: table, int64) }
         )
         XCTAssertEqual(
+            "CREATE TABLE \"table\" (\"int64Optional\" INTEGER PRIMARY KEY CHECK (\"int64\" > 0) REFERENCES \"table\" (\"int64\"))",
+            table.create { t in t.column(int64Optional, primaryKey: true, check: int64 > 0, references: table, int64) }
+        )
+        XCTAssertEqual(
             "CREATE TABLE \"table\" (\"int64Optional\" INTEGER UNIQUE CHECK (\"int64Optional\" > 0) REFERENCES \"table\" (\"int64\"))",
             table.create { t in t.column(int64Optional, unique: true, check: int64Optional > 0, references: table, int64) }
+        )
+        XCTAssertEqual(
+            "CREATE TABLE \"table\" (\"int64Optional\" INTEGER PRIMARY KEY CHECK (\"int64Optional\" > 0) REFERENCES \"table\" (\"int64\"))",
+            table.create { t in t.column(int64Optional, primaryKey: true, check: int64Optional > 0, references: table, int64) }
         )
     }
 
@@ -487,48 +517,95 @@ class SchemaTests : XCTestCase {
             table.create { t in t.column(stringOptional, unique: true, check: string != "", defaultValue: string, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"string\" != '') DEFAULT (\"stringOptional\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, unique: true, check: string != "", defaultValue: stringOptional, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"string\" != '')
+             DEFAULT (\"stringOptional\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional,
+                                         unique: true,
+                                         check: string != "",
+                                         defaultValue: stringOptional,
+                                         collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '') DEFAULT (\"string\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "", defaultValue: string, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '')
+             DEFAULT (\"string\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "",
+                                         defaultValue: string, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '') DEFAULT (\"stringOptional\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "", defaultValue: stringOptional, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '')
+             DEFAULT (\"stringOptional\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "",
+                                         defaultValue: stringOptional, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"string\" != '') DEFAULT ('string') COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, unique: true, check: string != "", defaultValue: "string", collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"string\" != '')
+             DEFAULT ('string') COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, unique: true, check: string != "",
+                                         defaultValue: "string", collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '') DEFAULT ('string') COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "", defaultValue: "string", collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT UNIQUE CHECK (\"stringOptional\" != '')
+             DEFAULT ('string') COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, unique: true, check: stringOptional != "",
+                                         defaultValue: "string", collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '') DEFAULT (\"string\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: string != "", defaultValue: string, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '')
+             DEFAULT (\"string\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: string != "",
+                                         defaultValue: string, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '') DEFAULT (\"string\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: stringOptional != "", defaultValue: string, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '')
+             DEFAULT (\"string\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: stringOptional != "",
+                                         defaultValue: string, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '') DEFAULT (\"stringOptional\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: string != "", defaultValue: stringOptional, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '')
+             DEFAULT (\"stringOptional\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: string != "",
+                                         defaultValue: stringOptional, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '') DEFAULT (\"stringOptional\") COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: stringOptional != "", defaultValue: stringOptional, collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '')
+             DEFAULT (\"stringOptional\") COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: stringOptional != "",
+                                         defaultValue: stringOptional, collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '') DEFAULT ('string') COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: string != "", defaultValue: "string", collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"string\" != '')
+             DEFAULT ('string') COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: string != "",
+                                         defaultValue: "string", collate: .rtrim) }
         )
         XCTAssertEqual(
-            "CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '') DEFAULT ('string') COLLATE RTRIM)",
-            table.create { t in t.column(stringOptional, check: stringOptional != "", defaultValue: "string", collate: .rtrim) }
+            """
+            CREATE TABLE \"table\" (\"stringOptional\" TEXT CHECK (\"stringOptional\" != '')
+             DEFAULT ('string') COLLATE RTRIM)
+            """.replacingOccurrences(of: "\n", with: ""),
+            table.create { t in t.column(stringOptional, check: stringOptional != "",
+                                         defaultValue: "string", collate: .rtrim) }
         )
     }
 

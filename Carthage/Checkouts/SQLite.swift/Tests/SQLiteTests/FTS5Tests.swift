@@ -81,6 +81,16 @@ class FTS5Tests: XCTestCase {
             sql(config.tokenizer(.Unicode61(removeDiacritics: true, tokenchars: ["."], separators: ["X"]))))
     }
 
+    func test_tokenizer_trigram() {
+        XCTAssertEqual(
+                "CREATE VIRTUAL TABLE \"virtual_table\" USING fts5(tokenize=trigram case_sensitive 0)",
+                sql(config.tokenizer(.Trigram())))
+
+        XCTAssertEqual(
+                "CREATE VIRTUAL TABLE \"virtual_table\" USING fts5(tokenize=trigram case_sensitive 1)",
+                sql(config.tokenizer(.Trigram(caseSensitive: true))))
+    }
+
     func test_column_size() {
         XCTAssertEqual(
             "CREATE VIRTUAL TABLE \"virtual_table\" USING fts5(columnsize=1)",
@@ -107,7 +117,10 @@ class FTS5Tests: XCTestCase {
 
     func test_fts5_config_all() {
         XCTAssertEqual(
-            "CREATE VIRTUAL TABLE \"virtual_table\" USING fts5(\"int\", \"string\" UNINDEXED, \"date\" UNINDEXED, tokenize=porter, prefix=\"2,4\", content=\"table\")",
+            """
+            CREATE VIRTUAL TABLE \"virtual_table\" USING fts5(\"int\", \"string\" UNINDEXED, \"date\" UNINDEXED,
+             tokenize=porter, prefix=\"2,4\", content=\"table\")
+            """.replacingOccurrences(of: "\n", with: ""),
             sql(config
                 .tokenizer(.Porter)
                 .column(int)
@@ -119,6 +132,6 @@ class FTS5Tests: XCTestCase {
     }
 
     func sql(_ config: FTS5Config) -> String {
-        return virtualTable.create(.FTS5(config))
+        virtualTable.create(.FTS5(config))
     }
 }

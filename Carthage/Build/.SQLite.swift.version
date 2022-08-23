@@ -1,8 +1,8 @@
 {
   "Mac" : [
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "d61d985d6740147cbb87d5580dbba27417d711517bb7c97fcce99ff5e52fb151",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "6ab28e23b9ab5935e98059e02ef61992c67120d38e56d806e6e9ef72d2a692b0",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "macos-arm64_x86_64"
@@ -10,15 +10,15 @@
   ],
   "watchOS" : [
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "c7382e9fa05db0c0cba6230f2881c70e29381b58008b27ef37073266142657ba",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "f4ede2769120897d7e001366e098ad7030c439ecf9bfecdbd1ec55850bcb46a3",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "watchos-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "41b742963502a3212b0bbe3f063b3c65b93fe19bccd611eef8c6bcc847758056",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "c1132954caf741986ed1c6872fc99ed8fb359d02a9fd0c2ccbd903bfbb8e5eb2",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "watchos-arm64_32_armv7k"
@@ -26,32 +26,32 @@
   ],
   "tvOS" : [
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "18e1883d2a69ad17dd66cee72db63efc784bac0c4578919affc2c4b08d80d200",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "c507a2e6eb6664ab819365e54314057ec48b88897d6432345ea3151e327a7a86",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "tvos-arm64_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "47b3447722eb24a3be074f5e3359211aacea67ae521abd14dd557a580dd1bc5e",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "baf4e14e805d7a2a1fcf6779303a46e94392cd82b0a61e68d8d022fbd4958bc4",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "tvos-arm64"
     }
   ],
-  "commitish" : "0.12.2",
+  "commitish" : "0.13.3",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "cdb98473dbb406fe7d0448b32d5142f8ae55c54d72b2e74060341705d74543ff",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "dd04e76e6f6546f5cd58d8711b81326b7034f922727c9cd840ebe3a7ee3a33f8",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)",
-      "hash" : "d17506039238d799ae4c4a788b63e14fe9c5fadf27ba134d9b2926056f0ceae3",
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "a30c4914bbfd9ab513e52e1e29f5b879f19e2eb893b37fc43af5ff4e657f6975",
       "name" : "SQLite",
       "container" : "SQLite.xcframework",
       "identifier" : "ios-arm64_armv7"

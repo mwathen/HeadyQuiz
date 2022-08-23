@@ -1,4 +1,45 @@
-0.11.6 (xxx), [diff][diff-0.11.6]
+0.13.3 (25-01-2022), [diff][diff-0.13.3]
+========================================
+
+* UUID Fix ([#1112][])
+* Add prepareRowIterator method to an extension of Statement. ([#1119][])
+* Adding primary key support to column with references ([#1121][])
+
+0.13.2 (25-01-2022), [diff][diff-0.13.2]
+========================================
+
+* Closing bracket position ([#1100][])
+* Native user_version support in Connection ([#1105][])
+
+0.13.1 (17-11-2021), [diff][diff-0.13.1]
+========================================
+
+* Support for database backup ([#919][])
+* Support for custom SQL aggregates ([#881][])
+* Restore previous behavior in `FailableIterator` ([#1075][])
+* Fix compilation on Linux ([#1077][])
+* Align platform versions in SPM manifest and Xcode ([#1094][])
+* Revert OSX deployment target back to 10.10 ([#1095][])
+
+0.13.0 (22-08-2021), [diff][diff-0.13.0]
+========================================
+
+* Swift 5.3 support
+* Xcode 12.5 support
+* Bumps minimum deployment versions
+* Fixes up Package.swift to build SQLiteObjc module
+
+0.12.1, 0.12.2 (21-06-2019) [diff][diff-0.12.2]
+========================================
+
+* CocoaPods modular headers support
+
+0.12.0 (24-04-2019) [diff][diff-0.12.0]
+========================================
+
+* Version with Swift 5 Support
+
+0.11.6 (19-04-2019), [diff][diff-0.11.6]
 ========================================
 
 * Swift 4.2, SQLCipher 4.x ([#866][])
@@ -63,6 +104,12 @@
 [diff-0.11.4]: https://github.com/stephencelis/SQLite.swift/compare/0.11.3...0.11.4
 [diff-0.11.5]: https://github.com/stephencelis/SQLite.swift/compare/0.11.4...0.11.5
 [diff-0.11.6]: https://github.com/stephencelis/SQLite.swift/compare/0.11.5...0.11.6
+[diff-0.12.0]: https://github.com/stephencelis/SQLite.swift/compare/0.11.6...0.12.0
+[diff-0.12.2]: https://github.com/stephencelis/SQLite.swift/compare/0.12.0...0.12.2
+[diff-0.13.0]: https://github.com/stephencelis/SQLite.swift/compare/0.12.2...0.13.0
+[diff-0.13.1]: https://github.com/stephencelis/SQLite.swift/compare/0.13.0...0.13.1
+[diff-0.13.2]: https://github.com/stephencelis/SQLite.swift/compare/0.13.1...0.13.2
+[diff-0.13.3]: https://github.com/stephencelis/SQLite.swift/compare/0.13.2...0.13.3
 
 [#142]: https://github.com/stephencelis/SQLite.swift/issues/142
 [#315]: https://github.com/stephencelis/SQLite.swift/issues/315
@@ -95,3 +142,14 @@
 [#726]: https://github.com/stephencelis/SQLite.swift/pull/726
 [#797]: https://github.com/stephencelis/SQLite.swift/pull/797
 [#866]: https://github.com/stephencelis/SQLite.swift/pull/866
+[#881]: https://github.com/stephencelis/SQLite.swift/pull/881
+[#919]: https://github.com/stephencelis/SQLite.swift/pull/919
+[#1075]: https://github.com/stephencelis/SQLite.swift/pull/1075
+[#1077]: https://github.com/stephencelis/SQLite.swift/issues/1077
+[#1094]: https://github.com/stephencelis/SQLite.swift/pull/1094
+[#1095]: https://github.com/stephencelis/SQLite.swift/pull/1095
+[#1100]: https://github.com/stephencelis/SQLite.swift/pull/1100
+[#1105]: https://github.com/stephencelis/SQLite.swift/pull/1105
+[#1112]: https://github.com/stephencelis/SQLite.swift/pull/1112
+[#1119]: https://github.com/stephencelis/SQLite.swift/pull/1119
+[#1121]: https://github.com/stephencelis/SQLite.swift/pull/1121
